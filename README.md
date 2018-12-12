@@ -241,4 +241,11 @@ add_theme_support('post-thumbnails');
 </body>
 </html>
  
+
+/****** Home custom ou autres pages custom ****/
+ créer par exemple templae_home.php, mettre dedans ce commentaire et aller à la page dans le bachOffice
+ /*Template Name: Habillage de la home*/
+ 
+ 
+ 
  
