@@ -1,5 +1,5 @@
 // steps 
-1- Vaut mieux commencer par créer header.php, index.php, style.css, et functions.php 
+1- Vaut mieux commencer par créer header.php, index.php, style.css, et functions.php, sidebar.php si on en a besoin
 
 
 
@@ -76,5 +76,146 @@
 	
 /***** Then style.css ****/
 
+*{box-sizing: border-box;}
+
+#page {
+	width: 90%;
+	margin: 15px auto;
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 2px;
+	overflow: hidden;
+}
+
+#content {
+	width: 75%;
+	float: left;
+}
+
+#header {
+	background: url(img/header.jpg);
+	color: red;
+}
+
+.sidebar {
+	width: 20%;
+	float: right;
+}
+.sidebar li {
+	list-style-type: none;
+}
+
+
+#footer {
+	color: black;
+	clear: both;
+	padding: 2em 1%;
+	overflow: hidden;
+}
+
+.widgetFooter {
+	border: 1px solid black;
+	border-radius: 3px;
+	padding: 2px;
+	width: 31.5%;
+	float: left;
+	margin: 0.5%;
+}
+
+.tac {
+	text-align: center;
+}
+
+.stopclear {
+	clear: both;
+}
+
+.imageList {
+	display: inline;
+	float: left;
+}
+
+
+
 /***** functions.php *****/
 Avec des le depert add_theme_support('post-thumbnails'); 
+
+/***** The sidebar *****/
+sidebar.php
+<div class="sidebar">
+	<?php dynamic_sidebar('l1'); ?> 
+</div>
+
+avec functions.php + d'autres widgets pour le footer
+
+<?php
+if ( function_exists('register_sidebar') )
+	$args = array(
+		'name' => 'Barre laterale',
+		'id' => 'l1',
+		'description' => 'Zone laterale gauche des pages'
+	);
+register_sidebar($args);
+
+$args = array(
+		'name' => 'Footer Gauche',
+		'id' => 'g1',
+		'description' => 'Footer gauche',
+		'before_widget' => '<div class="widgetFooter">',
+		'after_widget' => '</div>',
+	);
+register_sidebar($args);
+
+//creation de la zone de widget footer droit
+$args = array(
+		'name' => 'Footer droit',
+		'id' => 'z1',
+		'description' => 'Footer droit',
+		'before_widget' => '<div class="widgetFooter">',
+		'after_widget' => '</div>',
+	);
+register_sidebar($args);
+
+//creation de la zone de widget footer centre
+<?php
+if ( function_exists('register_sidebar') )
+	$args = array(
+		'name' => 'Barre laterale',
+		'id' => 'l1',
+		'description' => 'Zone laterale gauche des pages'
+	);
+register_sidebar($args);
+
+$args = array(
+		'name' => 'Footer Gauche',
+		'id' => 'g1',
+		'description' => 'Footer gauche',
+		'before_widget' => '<div class="widgetFooter">',
+		'after_widget' => '</div>',
+	);
+register_sidebar($args);
+
+//creation de la zone de widget footer droit
+$args = array(
+		'name' => 'Footer droit',
+		'id' => 'z1',
+		'description' => 'Footer droit',
+		'before_widget' => '<div class="widgetFooter">',
+		'after_widget' => '</div>',
+	);
+register_sidebar($args);
+
+//creation de la zone de widget footer centre
+$args = array(
+		'name' => 'Footer centre',
+		'id' => 'k1',
+		'description' => 'Footer centre',
+		'before_widget' => '<div class="widgetFooter">',
+		'after_widget' => '</div>',
+	);
+register_sidebar($args);
+
+add_theme_support('post-thumbnails'); 
+
+
+ ?>
