@@ -217,5 +217,28 @@ register_sidebar($args);
 
 add_theme_support('post-thumbnails'); 
 
-
  ?>
+ 
+/******* 404.php *******/
+ <?php get_header(); ?>
+
+<div id="content">
+	<h2>Oupsss  Page non trouvable</h2>
+	<div id="moteur">
+
+	</div>
+</div>
+<?php
+	get_sidebar();
+?>
+
+<?php
+	get_footer();
+	wp_footer(); 
+?> 
+</div><!--Fin de id_page-->
+
+</body>
+</html>
+ 
+ 
