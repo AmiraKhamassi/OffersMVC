@@ -1,0 +1,12 @@
+add_theme_support('post-thumbnails'); // activer l'ajout d'image
+
+$args = array(
+		'name' => 'Barra laterale',
+		'id' => 'l1',
+		'description' => 'Zone laterale gauche des pages'
+	);
+register_sidebar($args);  //pour activer la zone widget et rajouter une barre latérale
+
+register_nav_menus( array(
+	'menu_principal' => 'Menu principal',
+) ); //pour les menus 
